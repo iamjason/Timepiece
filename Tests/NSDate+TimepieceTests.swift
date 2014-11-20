@@ -119,4 +119,11 @@ class NSDateTestCase: XCTestCase {
         let date = NSDate.date(year: 2012, month: 2, day: 1)
         XCTAssertEqual(date.endOfMonth.day, 29, "")
     }
+
+  
+    func testStartOfWorkWeek(){
+      let date = NSDate.date(year: 2014, month: 11, day: 20, hour: 0, minute: 0, second: 0)
+      XCTAssertEqual(date.startOfWorkWeek.day, 17, "Monday Should be the 17th")
+    }
+
 }

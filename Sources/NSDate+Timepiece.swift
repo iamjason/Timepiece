@@ -121,4 +121,17 @@ public extension NSDate {
     var endOfMinute: NSDate {
         return change(second: 59)
     }
+
+    // Monday
+    var startOfWorkWeek: NSDate {
+      
+      let comps = calendar.components(NSCalendarUnit.WeekOfYearCalendarUnit|NSCalendarUnit.YearCalendarUnit|NSCalendarUnit.MonthCalendarUnit|NSCalendarUnit.WeekCalendarUnit|NSCalendarUnit.WeekdayCalendarUnit, fromDate: self) as NSDateComponents
+      
+      comps.setValue(2, forComponent: NSCalendarUnit.WeekdayCalendarUnit)
+      
+      let monday = calendar.dateFromComponents(comps)!
+      return monday
+      
+    }
+
 }
